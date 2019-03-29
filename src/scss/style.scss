@@ -1,0 +1,127 @@
+.cat-reference {
+    background-color: #f2f2f2;
+
+    dd {
+        font-size: 16px;
+
+        img {
+            border-radius: 5px;
+        }
+    }
+}
+
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: bold;
+    color: #a38b70;
+}
+
+.reference-title {
+    font-size: 24px;
+}
+
+.reference-source {
+    font-size: 16px;
+    color: #666666;
+    font-style: italic;
+
+    a {
+        color: #a38b70;
+
+        &:hover {
+            color: #8d745a;
+        }
+
+        &:active {
+            color: rgba(141, 116, 90, 0.3);
+        }
+    }
+}
+
+.review-item {
+    font-size: 16px;
+    border-left: 3px solid #a38b70;
+}
+
+.review-author {
+    font: {
+        style: italic;
+        weight: bold;
+    }
+}
+
+.popular-and-price {
+    background-color: #f2f2f2;
+}
+
+.catalog-item {
+    font-size: 16px;
+
+    h3 {
+        font-size: 16px;
+        color: #000000;
+    }
+}
+
+.price-list {
+    line-height: 30px;
+
+    th {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    td {
+        border-color: #d8d8d8;
+    }
+
+    .price-name {
+        color: #000000;
+    }
+}
+
+.feedback-tip {
+    font-size: 16px;
+}
+
+.feedback-form {
+
+    input[type="text"],
+    select,
+    textarea {
+        font: inherit;
+        color: inherit;
+        border: 2px solid #d5d5d5;
+
+        &:hover {
+            border-color: #bebebe;
+        }
+
+        &:focus {
+            border-color: #8d745a;
+        }
+    }
+}
+
+.feedback-form-group {
+    label {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}
+
+.checkbox-area {
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.page-footer {
+    background-color: #363636;
+    color: #c3c3c3;
+}
+
+.footer-middle,
+.footer-bottom {
+    border-top: 1px solid #5e5e5e;
+}

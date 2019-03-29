@@ -1,3 +1,146 @@
-.wrapper {
-  display: flex;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Arial", sans-serif;
+  color: #404040;
+  background-color: white;
+}
+
+.page-header {
+  padding: 10px;
+  background-color: #363636;
+  color: #c3c3c3;
+}
+
+.main-nav {
+  list-style: none;
+}
+
+.main-nav li {
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav a:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  color: #a38b70;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #8d745a;
+}
+
+.btn:active {
+  color: rgba(141, 116, 90, 0.3);
+}
+
+.promo {
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 55px;
+  font-family: "Georgia", serif;
+  text-align: center;
+}
+
+.promo a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.features ul {
+  list-style: none;
+}
+
+.feature-item {
+  text-align: center;
+  border-left: 1px solid #d9d9d9;
+}
+
+.feature-item:first-child {
+  border-left: none;
+}
+
+.feature-item p {
+  font-size: 16px;
+}
+
+.price-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-list th {
+  font-weight: normal;
+  text-align: left;
+}
+
+.price-list td {
+  border: 1px solid #333333;
+}
+
+.price-list th,
+.price-list td {
+  padding: 5px 10px;
+}
+
+.price-list .price-number {
+  text-align: center;
+}
+
+.price-list .price-name {
+  font-weight: bold;
+}
+
+.feedback-form-group {
+  padding: 10px 0;
+}
+
+.page-footer {
+  margin-top: 20px;
+  padding: 10px;  
+}
+
+.feature-title {
+  font-family: "Georgia", serif;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #a38b70;
+}
+
+.cat-reference {
+  background-color: #f2f2f2;
+}
+
+.section-title{
+  font-family: 'Georgia', serif;
+  font-size: 45px;
+  line-height: 55px;
+  font-weight: bold;
+  color: #a38b70;
+}
+
+.reference-title {
+  font-size: 24px;
+}
+
+.reference-source {
+  font-size: 16px;
+  color: #666666;
+  font-style: italic;
 }
