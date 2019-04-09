@@ -1,6 +1,6 @@
 
 // JS - ./js/index.js
-import './js/';
+import './js';
 // SCSS
 // import './scss/main.scss'
 import './scss/style.scss';
@@ -13,23 +13,23 @@ import './css/main.css';
 
 // import 'vue'
 // import Vue from 'vue'
-window.Vue = require('vue');
 import store from './store';
 
-Vue.component('example-component', require('./components/Example.vue').default)
+window.Vue = require('vue');
+Vue.component('example-component', require('./components/Example.vue').default);
 
 // With vuex
 const app = new Vue({
-  data () {
+  el: '#app',
+  data() {
     return {
       component: false,
-    }
+    };
   },
   store,
-  el: '#app'
-})
+});
 
-console.log("msg");
+// console.log('msg');
 
 //* Without vuex and store
 // const app = new Vue({
