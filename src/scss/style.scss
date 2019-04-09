@@ -125,3 +125,61 @@
 .footer-bottom {
     border-top: 1px solid #5e5e5e;
 }
+
+.footer-menu {
+    h3 {
+        font-family: "Georgia", serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #a38b70;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        font-size: 16px;
+        color: #c3c3c3;
+        text-decoration: none;
+
+        &:hover {
+            color: #ffffff;
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.footer-social {
+    b {
+        font: {
+            family: "Georgia", serif;
+            size: 24px;
+        }
+
+        color:#a38b70;
+    }
+}
+
+a.social-btn {
+    color: #ffffff;
+}
+
+.footer-copyright {
+    color: #ffffff;
+    text-transform: uppercase;
+
+    a {
+        color: white;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:active{
+            color:rgba(255, 255, 255, 0.3);
+        }
+    }
+}
