@@ -41,6 +41,15 @@ module.exports = {
         },
       },
     }, {
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+        options: {
+          attrs: [':data-src'],
+          minimize: true,
+        },
+      },
+    }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {

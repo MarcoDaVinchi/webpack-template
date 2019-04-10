@@ -21,6 +21,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
+    new webpack.HotModuleReplacementPlugin({
+      // Options...
+    }),
   ],
 });
 
