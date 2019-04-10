@@ -11,7 +11,7 @@
 }
 
 .section-title {
-    font-family: 'Georgia', serif;
+    font-family: "Georgia", serif;
     font-size: 45px;
     line-height: 55px;
     font-weight: bold;
@@ -160,7 +160,7 @@
             size: 24px;
         }
 
-        color:#a38b70;
+        color: #a38b70;
     }
 }
 
@@ -175,11 +175,22 @@ a.social-btn {
     a {
         color: white;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
             text-decoration: underline;
         }
-        &:active{
-            color:rgba(255, 255, 255, 0.3);
+
+        &:active {
+            color: rgba(255, 255, 255, 0.3);
         }
+    }
+}
+
+.page-header {
+    background: {
+        image: url("../img/header-bg.jpg");
+        repeat: no-repeat;
+        position: center;
+        size: cover;
     }
 }
