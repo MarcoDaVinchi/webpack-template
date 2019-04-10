@@ -2,8 +2,11 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
+const {
+  VueLoaderPlugin,
+} = require('vue-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -50,13 +53,22 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true },
+          options: {
+            sourceMap: true,
+          },
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } },
+          options: {
+            sourceMap: true,
+            config: {
+              path: `${PATHS.src}/js/postcss.config.js`,
+            },
+          },
         }, {
           loader: 'sass-loader',
-          options: { sourceMap: true },
+          options: {
+            sourceMap: true,
+          },
         },
       ],
     }, {
@@ -66,10 +78,17 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true },
+          options: {
+            sourceMap: true,
+          },
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } },
+          options: {
+            sourceMap: true,
+            config: {
+              path: `${PATHS.src}/js/postcss.config.js`,
+            },
+          },
         },
       ],
     }],
@@ -91,9 +110,27 @@ module.exports = {
       template: `${PATHS.src}/index.html`,
       filename: './index.html',
     }),
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/static`, to: '' },
+    new CopyWebpackPlugin([{
+        from: `${PATHS.src}/img`,
+        to: `${PATHS.assets}img`,
+      },
+      {
+        from: `${PATHS.src}/static`,
+        to: '',
+      },
     ]),
   ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
 };
