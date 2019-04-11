@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -8,11 +8,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production';
+// const devMode = process.env.NODE_ENV !== 'production';
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
+  src: path.resolve(__dirname, '../src'),
+  dist: path.resolve(__dirname, '../dist'),
   assets: 'assets/',
 };
 
@@ -60,68 +60,75 @@ module.exports = {
           },
         },
       },
-      // {
-      //   test: /\.(html)$/,
-      //   use: [
-      //     // {
-      //     //   loader: 'file-loader',
-      //     //   options: {
-      //     //     name: '[name].[ext]',
-      //     //   },
-      //     // },
-      //     // {
-      //     //   loader: 'extract-loader',
-      //     // },
-      //     {
-      //       loader: 'html-loader',
-      //       options: {
-      //         attrs: [':data-src', 'img:src', 'link:href'],
-      //         minimize: true,
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.(html)$/,
+        use: [
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: '[name].[ext]',
+          //   },
+          // },
+          // {
+          //   loader: 'extract-loader',
+          // },
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: [':data-src', 'img:src', 'link:href'],
+              minimize: true,
+            },
+          },
+        ],
+      },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
           name: '[name][hash].[ext]',
-          outputPath: `${PATHS.assets}img`,
+          outputPath: 'assets/img/',
         },
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: `${PATHS.src}/js/postcss.config.js`,
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          // {
+          //   loader: 'style-loader',
+          // },
+          // {
+          //   loader: MiniCssExtractPlugin.loader,
+          //   options: {
+          //     publicPath: '../',
+          //     hmr: process.env.NODE_ENV === 'development',
+          //   },
+          // },
+          // {
+          //   loader: 'css-loader',
+          //   options: {
+          //     sourceMap: true,
+          //   },
+          // },
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     sourceMap: true,
+          //     config: {
+          //       path: `${PATHS.src}/js/postcss.config.js`,
+          //     },
+          //   },
+          // },
+          // {
+          //   loader: 'resolve-url-loader',
+          //   options: {
+          //     sourceMap: true,
+          //   },
+          // },
+          // {
+          //   loader: 'sass-loader',
+          //   options: {
+          //     sourceMap: true,
+          //   },
+          // },
         ],
       },
     ],
@@ -148,18 +155,18 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      // filename: `${PATHS.assets}css/[name].css`,
-      // filename: devMode ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`,
-      // chunkFilename: devMode ? `${PATHS.assets}css/[id].css` : `${PATHS.assets}css/[id].[hash].css`,
-      filename: `${PATHS.assets}css/[name].[hash].css`,
-      chunkFilename: `${PATHS.assets}css/[id].[hash].css`,
-    }),
+    // new MiniCssExtractPlugin({
+    //   // filename: `${PATHS.assets}css/[name].css`,
+    //   filename: devMode ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`,
+    //   chunkFilename: devMode ? `${PATHS.assets}css/[id].css` : `${PATHS.assets}css/[id].[hash].css`,
+    //   // filename: `${PATHS.assets}css/[name].[hash].css`,
+    //   // chunkFilename: `${PATHS.assets}css/[id].[hash].css`,
+    // }),
     // Copy HtmlWebpackPlugin and change index.html for another html page
     new HtmlWebpackPlugin({
       // hash: false,
       template: `${PATHS.src}/index.html`,
-      filename: './index.html',
+      filename: 'index.html',
     }),
     // new CopyWebpackPlugin([
     //   {
