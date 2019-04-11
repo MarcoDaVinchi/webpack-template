@@ -8,10 +8,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   // devtool: 'cheap-module-eval-source-map',
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: baseWebpackConfig.externals.paths.dist,
+    contentBase: baseWebpackConfig.externals.paths.src,
     port: 8081,
     compress: true,
     hot: true,
+    watchContentBase: true,
     // overlay: {
     //   warnings: true,
     //   errors: true,
@@ -21,9 +22,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
-    new webpack.HotModuleReplacementPlugin({
-      // Options...
-    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 });
 
