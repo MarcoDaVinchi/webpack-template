@@ -1,2 +1,2 @@
-let add = (a,b) => a+b
-console.log(add(2,6))
+const add = (a, b) => a + b;
+console.log(add(2, 8));

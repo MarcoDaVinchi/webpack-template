@@ -7,21 +7,22 @@ import './scss/style.scss';
 import './css/main.css';
 
 // import 'vue'
-// import Vue from 'vue'
+import Vue from 'vue';
 import store from './store';
 
-window.Vue = require('vue');
-Vue.component('example-component', require('./components/Example.vue').default);
+// window.Vue = require('vue');
+// Vue.component('example-component', require('./components/Example.vue').default);
 
 // With vuex
 const app = new Vue({
   el: '#app',
-  data() {
-    return {
-      component: false,
-    };
+  data: {
+    // return {
+    //   component: false,
+    // };
+
+    message: 'Hello vue!',
   },
-  store,
 });
 
 // console.log('msg');

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 
 const PATHS = {
@@ -15,6 +16,39 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   module: {
     rules: [
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name][hash].[ext]',
+              outputPath: 'assets/img/',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              disable: false,
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              // optipng.enabled: false will disable optipng
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+            },
+          },
+        ],
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -36,16 +70,10 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
             options: {
               sourceMap: true,
               config: {
-                path: `${PATHS.src}/js/postcss.config.js`,
+                path: `${PATHS.src}/js/postcssConfigBuild/`,
               },
             },
           },
-          // {
-          //   loader: 'resolve-url-loader',
-          //   options: {
-          //     sourceMap: true,
-          //   },
-          // },
           {
             loader: 'sass-loader',
             options: {
@@ -56,6 +84,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
       },
     ],
   },
+  // devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].css`,
@@ -64,6 +93,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
       filename: 'assets/css/[name].[hash].css',
       chunkFilename: 'assets/css/[id].[hash].css',
     }),
+    new CleanWebpackPlugin(),
   ],
 });
 

@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const urlLoader = require('./loaders/url-loader');
+const sassLoader = require('./loaders/sass-loader');
 const baseWebpackConfig = require('./webpack.base.conf');
 
 const PATHS = {
@@ -10,10 +12,22 @@ const PATHS = {
 };
 
 const devWebpackConfig = merge(baseWebpackConfig, {
-  // DEV config
   mode: 'development',
   module: {
     rules: [
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          urlLoader('assets/img/', 100),
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     name: '[name][hash].[ext]',
+          //     outputPath: 'assets/img/',
+          //   },
+          // },
+        ],
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -31,22 +45,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             options: {
               sourceMap: true,
               config: {
-                path: `${PATHS.src}/js/postcss.config.js`,
+                path: `${PATHS.src}/js/postcssConfigDev/`,
               },
             },
           },
+          sassLoader(true),
           // {
-          //   loader: 'resolve-url-loader',
+          //   loader: 'sass-loader',
           //   options: {
           //     sourceMap: true,
           //   },
           // },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
         ],
       },
     ],

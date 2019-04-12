@@ -1,14 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-
-// const devMode = process.env.NODE_ENV !== 'production';
 
 const PATHS = {
   src: path.resolve(__dirname, '../src'),
@@ -17,7 +13,6 @@ const PATHS = {
 };
 
 module.exports = {
-  // BASE config
   externals: {
     paths: PATHS,
   },
@@ -81,55 +76,42 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name][hash].[ext]',
-          outputPath: 'assets/img/',
-        },
-      },
+      // {
+      //   test: /\.(png|jpg|gif|svg)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name][hash].[ext]',
+      //         outputPath: 'assets/img/',
+      //       },
+      //     },
+      //     {
+      //       loader: 'image-webpack-loader',
+      //       options: {
+      //         disable: false,
+      //         mozjpeg: {
+      //           progressive: true,
+      //           quality: 65,
+      //         },
+      //         // optipng.enabled: false will disable optipng
+      //         optipng: {
+      //           enabled: true,
+      //         },
+      //         pngquant: {
+      //           quality: '65-90',
+      //           speed: 4,
+      //         },
+      //         gifsicle: {
+      //           interlaced: false,
+      //         },
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          // {
-          //   loader: 'style-loader',
-          // },
-          // {
-          //   loader: MiniCssExtractPlugin.loader,
-          //   options: {
-          //     publicPath: '../',
-          //     hmr: process.env.NODE_ENV === 'development',
-          //   },
-          // },
-          // {
-          //   loader: 'css-loader',
-          //   options: {
-          //     sourceMap: true,
-          //   },
-          // },
-          // {
-          //   loader: 'postcss-loader',
-          //   options: {
-          //     sourceMap: true,
-          //     config: {
-          //       path: `${PATHS.src}/js/postcss.config.js`,
-          //     },
-          //   },
-          // },
-          // {
-          //   loader: 'resolve-url-loader',
-          //   options: {
-          //     sourceMap: true,
-          //   },
-          // },
-          // {
-          //   loader: 'sass-loader',
-          //   options: {
-          //     sourceMap: true,
-          //   },
-          // },
-        ],
+        use: [],
       },
     ],
   },
@@ -154,7 +136,6 @@ module.exports = {
       hashDigestLength: 8,
     }),
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
     // new MiniCssExtractPlugin({
     //   // filename: `${PATHS.assets}css/[name].css`,
     //   filename: devMode ? `${PATHS.assets}css/[name].css` : `${PATHS.assets}css/[name].[hash].css`,
