@@ -1,14 +1,16 @@
 // JS - ./js/index.js
-import './js/index';
+// import './js/index';
 // SCSS
 // import './scss/main.scss'
 import './scss/style.scss';
 // CSS (example)
-import './css/main.css';
+// import './css/main.css';
 
 // import 'vue'
 import Vue from 'vue';
-import store from './store';
+// import store from './store';
+
+// require('./index.html');
 
 // window.Vue = require('vue');
 // Vue.component('example-component', require('./components/Example.vue').default);

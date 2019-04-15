@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const urlLoader = require('./loaders/url-loader');
 const sassLoader = require('./loaders/sass-loader');
+const urlLoader = require('./loaders/url-loader');
 const baseWebpackConfig = require('./webpack.base.conf');
 
 const PATHS = {

@@ -12,7 +12,6 @@ const PATHS = {
 };
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
-  // BUILD config
   mode: 'production',
   module: {
     rules: [

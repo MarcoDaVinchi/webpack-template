@@ -17,12 +17,13 @@ module.exports = {
     paths: PATHS,
   },
   entry: {
-    app: PATHS.src,
+    index: `${PATHS.src}/index.js`,
+    app: `${PATHS.src}/app.js`,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: '/',
+    // publicPath: '/',
   },
   module: {
     rules: [
@@ -39,7 +40,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
+              presets: ['@babel/preset-env', '@babel/preset-react'],
               cacheDirectory: true,
               plugins: ['@babel/plugin-proposal-object-rest-spread'],
             },
@@ -148,6 +149,12 @@ module.exports = {
       // hash: false,
       template: `${PATHS.src}/index.html`,
       filename: 'index.html',
+      // chunks: ['index', 'vendor', 'runtime'],
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PATHS.src}/app.html`,
+      filename: 'app.html',
+      // chunks: ['app', 'vendor', 'runtime'],
     }),
     // new CopyWebpackPlugin([
     //   {

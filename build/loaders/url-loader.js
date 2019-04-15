@@ -6,4 +6,4 @@ module.exports = function urlLoader(prefix, limit) {
       name: `${prefix}/[name][hash].[ext]`,
     },
   };
-};
+}
