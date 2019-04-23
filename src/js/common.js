@@ -3,7 +3,7 @@ const sortedA = arr.sort((a, b) => a - b);
 // console.log(sortedA);
 
 const obj = {
-  className: 'open menu',
+  className: 'open menu'
 };
 
 function addClass(objToCheck, cls) {
