@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-size: 18px;
   line-height: 24px;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #404040;
   background-color: white;
 }
@@ -53,7 +53,7 @@ body {
   font-weight: bold;
   font-size: 45px;
   line-height: 55px;
-  font-family: "Georgia", serif;
+  font-family: 'Georgia', serif;
   text-align: center;
 }
 
@@ -112,11 +112,11 @@ body {
 
 .page-footer {
   margin-top: 20px;
-  padding: 10px;  
+  padding: 10px;
 }
 
 .feature-title {
-  font-family: "Georgia", serif;
+  font-family: 'Georgia', serif;
   font-size: 30px;
   line-height: 30px;
   font-weight: bold;
@@ -127,7 +127,7 @@ body {
   background-color: #f2f2f2;
 }
 
-.section-title{
+.section-title {
   font-family: 'Georgia', serif;
   font-size: 45px;
   line-height: 55px;

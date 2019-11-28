@@ -23,8 +23,8 @@ const app = new Vue({
     //   component: false,
     // };
 
-    message: 'Hello vue!',
-  },
+    message: 'Hello vue!'
+  }
 });
 
 // console.log('msg');

@@ -1,27 +1,27 @@
-@import "utils/libs";
-@import "utils/vars";
-@import "utils/mixins";
-@import "utils/fonts";
+@import 'utils/libs';
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/fonts';
 
 html {
   line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
   height: 100%;
   @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
+    font-size: 16px;
   }
   @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
+    font-size: 15px;
   }
   @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
+    font-size: 14px;
   }
 }
 
 body {
   font-family: $mainFont;
-	font-family: $mainFontSize;
+  font-family: $mainFontSize;
   font-weight: $mainFontWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,21 +29,34 @@ body {
   padding: 0;
 }
 
-*, *:before, *:after { box-sizing: border-box; }
-
-h1, h2, h3, h4, h5, h6 { margin: 0; }
-
-a {
-	text-decoration: none;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-section, .section {
+section,
+.section {
   position: relative;
   padding: 40px 0;
   @media screen and (max-width: $desktopWidth) {
@@ -87,4 +100,4 @@ section, .section {
   }
 }
 
-@import "modules/wrapper.scss";
+@import 'modules/wrapper.scss';

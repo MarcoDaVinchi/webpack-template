@@ -1,198 +1,197 @@
-@import "../css/main.css";
+@import '../css/main.css';
 
 .cat-reference {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 
-    dd {
-        font-size: 16px;
+  dd {
+    font-size: 16px;
 
-        img {
-            border-radius: 5px;
-        }
+    img {
+      border-radius: 5px;
     }
+  }
 }
 
 .section-title {
-    font-family: "Georgia", serif;
-    font-size: 45px;
-    line-height: 55px;
-    font-weight: bold;
-    color: #a38b70;
+  font-family: 'Georgia', serif;
+  font-size: 45px;
+  line-height: 55px;
+  font-weight: bold;
+  color: #a38b70;
 }
 
 .reference-title {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .reference-source {
-    font-size: 16px;
-    color: #666666;
-    font-style: italic;
+  font-size: 16px;
+  color: #666666;
+  font-style: italic;
 
-    a {
-        color: #a38b70;
+  a {
+    color: #a38b70;
 
-        &:hover {
-            color: #8d745a;
-        }
-
-        &:active {
-            color: rgba(141, 116, 90, 0.3);
-        }
+    &:hover {
+      color: #8d745a;
     }
+
+    &:active {
+      color: rgba(141, 116, 90, 0.3);
+    }
+  }
 }
 
 .review-item {
-    font-size: 16px;
-    border-left: 3px solid #a38b70;
+  font-size: 16px;
+  border-left: 3px solid #a38b70;
 }
 
 .review-author {
-    font: {
-        style: italic;
-        weight: bold;
-    }
+  font: {
+    style: italic;
+    weight: bold;
+  }
 }
 
 .popular-and-price {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .catalog-item {
-    font-size: 16px;
+  font-size: 16px;
 
-    h3 {
-        font-size: 16px;
-        color: #000000;
-    }
+  h3 {
+    font-size: 16px;
+    color: #000000;
+  }
 }
 
 .price-list {
-    line-height: 30px;
+  line-height: 30px;
 
-    th {
-        font-size: 14px;
-        text-transform: uppercase;
-    }
+  th {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
 
-    td {
-        border-color: #d8d8d8;
-    }
+  td {
+    border-color: #d8d8d8;
+  }
 
-    .price-name {
-        color: #000000;
-    }
+  .price-name {
+    color: #000000;
+  }
 }
 
 .feedback-tip {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .feedback-form {
+  input[type='text'],
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+    border: 2px solid #d5d5d5;
 
-    input[type="text"],
-    select,
-    textarea {
-        font: inherit;
-        color: inherit;
-        border: 2px solid #d5d5d5;
-
-        &:hover {
-            border-color: #bebebe;
-        }
-
-        &:focus {
-            border-color: #8d745a;
-        }
+    &:hover {
+      border-color: #bebebe;
     }
+
+    &:focus {
+      border-color: #8d745a;
+    }
+  }
 }
 
 .feedback-form-group {
-    label {
-        font-size: 12px;
-        text-transform: uppercase;
-    }
+  label {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
 }
 
 .checkbox-area {
-    border-bottom: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 .page-footer {
-    background-color: #363636;
-    color: #c3c3c3;
+  background-color: #363636;
+  color: #c3c3c3;
 }
 
 .footer-middle,
 .footer-bottom {
-    border-top: 1px solid #5e5e5e;
+  border-top: 1px solid #5e5e5e;
 }
 
 .footer-menu {
-    h3 {
-        font-family: "Georgia", serif;
-        font-size: 24px;
-        font-weight: bold;
-        color: #a38b70;
+  h3 {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #a38b70;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    font-size: 16px;
+    color: #c3c3c3;
+    text-decoration: none;
+
+    &:hover {
+      color: #ffffff;
     }
 
-    ul {
-        list-style: none;
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
     }
-
-    a {
-        font-size: 16px;
-        color: #c3c3c3;
-        text-decoration: none;
-
-        &:hover {
-            color: #ffffff;
-        }
-
-        &:active {
-            color: rgba(255, 255, 255, 0.3);
-        }
-    }
+  }
 }
 
 .footer-social {
-    b {
-        font: {
-            family: "Georgia", serif;
-            size: 24px;
-        }
-
-        color: #a38b70;
+  b {
+    font: {
+      family: 'Georgia', serif;
+      size: 24px;
     }
+
+    color: #a38b70;
+  }
 }
 
 a.social-btn {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .footer-copyright {
-    color: #ffffff;
-    text-transform: uppercase;
+  color: #ffffff;
+  text-transform: uppercase;
 
-    a {
-        color: white;
-        text-decoration: none;
+  a {
+    color: white;
+    text-decoration: none;
 
-        &:hover {
-            text-decoration: underline;
-        }
-
-        &:active {
-            color: rgba(255, 255, 255, 0.3);
-        }
+    &:hover {
+      text-decoration: underline;
     }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
 }
 
 .page-header {
-    background: {
-        image: url("../img/header-bg.jpg");
-        repeat: no-repeat;
-        position: center;
-        size: cover;
-    }
+  background: {
+    image: url('../img/header-bg.jpg');
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
 }

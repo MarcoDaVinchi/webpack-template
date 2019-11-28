@@ -1,6 +1,6 @@
 const arr = [1, -2, 15, 2, 0, 8];
 const sortedA = arr.sort((a, b) => a - b);
-// console.log(sortedA);
+console.log(sortedA);
 
 const obj = {
   className: 'open menu'
