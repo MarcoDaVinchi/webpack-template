@@ -27,8 +27,6 @@ services:
       - vs_code_extensions:/home/vscode/.vscode-server
       - vs_code_extensions:/home/node/.vscode-server
       #- vs_code_extensions:/root/.vscode-server
-      - D:\Documents\Distrib:/usr/src/distrib
-
       # Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker-compose for details.
       # - /var/run/docker.sock:/var/run/docker.sock
 

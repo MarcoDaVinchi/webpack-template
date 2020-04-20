@@ -25,8 +25,8 @@
     "webpack",
     "webpack4",
     "merge",
-    "bable",
-    "bable7",
+    "babel",
+    "babel7",
     "scss"
   ],
   "license": "MIT",
