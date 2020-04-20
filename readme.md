@@ -37,17 +37,22 @@ services:
 ```
 
 ### 3 Or even use locally installed Node JS
-This one is even more simple)
 
+This one is even more simple)
 
 `npm install` or `yarn install` or whatever manager you prefer
 
 ### `npm run dev`
+
 to start dev webpack configuration
 or
+
 ### `npm run build`
+
 to build project and
+
 ### `npm run start`
+
 to start http-server and serve builded content.
 
 And have fun!
