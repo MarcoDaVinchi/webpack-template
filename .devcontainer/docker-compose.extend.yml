@@ -13,9 +13,9 @@ services:
     # user: vscode
 
     # Uncomment if you want to add a different Dockerfile in the .devcontainer folder
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    build:
+      context: ./.devcontainer
+      dockerfile: Dockerfile
 
     # Uncomment if you want to expose any additional ports. The snippet below exposes port 3000.
     # ports:
@@ -24,7 +24,9 @@ services:
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
       #- D:\Documents\ext\.vscode-server:/root/.vscode-server
-      - vs_code_extensions:/root/.vscode-server
+      - vs_code_extensions:/home/vscode/.vscode-server
+      - vs_code_extensions:/home/node/.vscode-server
+      #- vs_code_extensions:/root/.vscode-server
       - D:\Documents\Distrib:/usr/src/distrib
 
       # Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker-compose for details.
@@ -41,6 +43,7 @@ services:
 
     # Overrides default command so things don't shut down after the process ends.
     command: /bin/sh -c "while sleep 1000; do :; done"
+    user: node
 
 volumes:
   vs_code_extensions:

@@ -26,6 +26,9 @@ const app = new Vue({
     message: 'Hello vue!'
   }
 });
+let a = 12;
+if (a == 10) {
+}
 
 // console.log('msg');
 

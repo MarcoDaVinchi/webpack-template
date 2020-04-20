@@ -1,6 +1,8 @@
 version: '3'
 services:
   keksdev:
-    image: ubuntu
+    image: node
     ports:
       - "8080"
+    expose:
+      - "8081"
